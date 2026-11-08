@@ -1,4 +1,3 @@
-
 import wikipedia
 import webbrowser
 import json
@@ -72,7 +71,11 @@ while True:
         break
 
     else:
-        if content and what_to_do in content:
+        words = what_to_do.lower().split()
+        article_words = content.lower().split()
+
+        if all(word in article_words for word in words):
             print("ALLOWED")
         else:
             print("DENIED")
+
